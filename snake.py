@@ -57,7 +57,6 @@ def ShowScore(choice = 1):
         Srect.midtop = (360, 90)
 
     GameWindow.blit(ScoreSurf, Srect)
-    pygame.display.flip()
 
 while True:
     for event in pygame.event.get():
@@ -74,7 +73,7 @@ while True:
             if event.key == pygame.K_LEFT or event.key == ord('h'):
                 changeto = 'LEFT'
             if event.key == pygame.K_ESCAPE:
-                pygame.event.post(pygame.event.Event(exit()))
+                pygame.event.post(pygame.event.Event(pygame.QUIT))
 
     if changeto == 'RIGHT' and not direction == 'LEFT':
         direction = 'RIGHT'
